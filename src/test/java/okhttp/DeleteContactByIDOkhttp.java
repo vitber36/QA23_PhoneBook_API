@@ -1,22 +1,36 @@
 package okhttp;
 
 import com.google.gson.Gson;
+import dto.ContactDTO;
 import dto.DeleteByIDResponseDTO;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class DeleteContactByIDOkhttp {
     String id;
     @BeforeMethod
             public void preCondition(){
         //create contact
+        int i=new Random().nextInt(1000)+1000;
+        ContactDTO contactDTO= ContactDTO.builder()
+                .name("qq")
+                .lastName("qq")
+                .address("qq")
+                .email("qq"+i+"@mail.ru")
+                .phone("111111111")
+                .description("qq")
+                .build();
+
         //get id from message:"Contact was added! ID:123123-123123-132123 "
+
         //id=""
     }
 
@@ -27,7 +41,7 @@ public class DeleteContactByIDOkhttp {
     @Test
     public void deleteContactByIDSuccess() throws IOException {
         Request request = new Request.Builder()
-                .url("https://contactapp-telran-backend.herokuapp.com/v1/contacts/bde3a291-4729-4b52-99a2-6ddd6aa61eb7") //+ id)
+                .url("https://contactapp-telran-backend.herokuapp.com/v1/contacts/bde3a291-4729-4b52-99a2-6ddd6aa61eb7"+id)
                 .delete()
                 .addHeader("Authorization", token)
                 .build();

@@ -18,7 +18,7 @@ public class GetAllContactsTextOkhttp {
     String token="eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoidml0YmVyMzZAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE3MDk1NzEwMTcsImlhdCI6MTcwODk3MTAxN30.htdBFfnYhwCvlH1Byaic2p2HzqK3jFYwCof6qWnWacA";
     Gson gson=new Gson();
     OkHttpClient client=new OkHttpClient();
-//rthyerty
+
     @Test
     public void getAllContactsSuccess() throws IOException {
         Request request=new Request.Builder()

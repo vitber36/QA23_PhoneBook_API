@@ -10,6 +10,6 @@ import lombok.ToString;
 @Builder
 @ToString
 
-public class DeleteByIDResponseDTO {
+public class MessageDTO {
     private String message;
 }
